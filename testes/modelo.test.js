@@ -23,3 +23,19 @@ test('Testando cadastro de três perguntas', () => {
   expect(perguntas[2].num_respostas).toBe(0);
   expect(perguntas[1].id_pergunta).toBe(perguntas[2].id_pergunta-1);
 });
+
+test('Testando recuperar pergunta', () => {
+  const pergunta = modelo.cadastrar_pergunta("Hm?")
+  expect(modelo.get_pergunta(pergunta).texto).toBe("Hm?")
+})
+
+test('Recuperar respostas retorna respostas criadas', () => {
+  const pergunta = "Hm?"
+  const resposta = "Hm o quê?"
+  const id_pergunta = modelo.cadastrar_pergunta(pergunta)
+  const id_resposta = modelo.cadastrar_resposta(id_pergunta, resposta)
+  const respostas = modelo.get_respostas(id_pergunta)
+
+  expect(respostas).toEqual([{id_pergunta, id_resposta, "texto": resposta,}])
+  
+})

@@ -31,6 +31,7 @@ recuperar todas as perguntas do BD; (b) a lógica para recuperar
 o número de respostas de uma pergunta. Então, o que exatamente
   o teste irá testar? Em outras palavras, qual  lógica restou 
 em `listar_perguntas` e que está sendo testada?
+Sobrou testar se as perguntas na lista tem as propriedades corretas.
 
 ## Criando uma Camada de Repositórios
 
